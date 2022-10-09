@@ -60,7 +60,7 @@ function _createBook(name, price, img) {
     name,
     price: price || getRandomIntInclusive(12, 30),
     rate: 0,
-    imgUrl: img || `/img/${name}.jpg`,
+    imgUrl: img || `img/${name}.jpg`,
   }
 }
 
