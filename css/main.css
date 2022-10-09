@@ -109,6 +109,13 @@ th {
   text-decoration: underline;
 }
 
+.filter-sortby {
+  align-self: center;
+  margin-top: 20px;
+  width: 70%;
+  border: 1px;
+}
+
 button {
   cursor: pointer;
   border-radius: 4px;

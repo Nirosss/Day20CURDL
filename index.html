@@ -48,6 +48,12 @@
         oninput="onSetFilterBy({txt: this.value})"
         placeholder="Search by name..."
       />
+      <button class="filter-sortby" onclick="onSetSortBy('name')">
+        Sort by Name
+      </button>
+      <button class="filter-sortby" onclick="onSetSortBy('price')">
+        Sort by Price
+      </button>
     </section>
     <section class="books-container"></section>
     <button class="add-book" onclick="onAddBook()">Add new book</button>
