@@ -1,0 +1,287 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #eee;
+}
+
+.switch-view {
+  position: fixed;
+  top: 5%;
+  right: 24%;
+}
+
+.switch-view button {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  background: #34495e;
+  color: #fff;
+  border-radius: 0.3em;
+  overflow: hidden;
+  padding-bottom: 7px;
+  width: 70vw;
+}
+tr {
+  border-color: lighten(#34495e, 10%);
+}
+th,
+td {
+  margin: 0.5em 1em;
+}
+th,
+td:before {
+  color: #dd5;
+}
+
+th {
+  text-align: left;
+}
+
+/* .action-buttons{ 
+    text-align: center;
+  } */
+
+.add-book {
+  margin: 10px;
+}
+
+.modal {
+  background-color: #111;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 150%;
+  height: 100vh;
+  min-width: 300px;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.modal.open {
+  left: 50%;
+  transition: left 0.5s;
+}
+
+.modal h3 {
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+.modal > p {
+  text-align: left;
+}
+
+.modal-img {
+  height: 35vh;
+}
+
+.book-rate {
+  width: 30%;
+  margin-bottom: 10px;
+  margin-left: 33%;
+  cursor: pointer;
+  border: solid snow;
+  border-radius: 2px;
+}
+
+.book-filter {
+  background-color: #41907c;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 100vh;
+  position: fixed;
+  right: 0%;
+  top: 0%;
+  border: solid black 1px;
+}
+
+.filter-title {
+  align-self: center;
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.read {
+  background-color: rgb(39, 28, 188);
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  padding: 6px 15px;
+  text-shadow: 0px 1px 0px #5676a0;
+}
+
+.update {
+  background-color: rgb(255, 145, 0);
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  padding: 6px 15px;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+
+.delete {
+  background-color: #e4685d;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  padding: 6px 15px;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+
+input {
+  margin-top: 20px;
+}
+
+.sort-by {
+  cursor: pointer;
+}
+
+.sort-by.title {
+  width: 30vw;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75vw;
+}
+
+.book-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(215, 192, 150);
+  color: darkviolet;
+  width: 22%;
+  margin: 0.5em;
+  border: 1px solid rgb(218, 203, 203);
+  border-radius: 0.3em;
+  text-align: center;
+  padding: 3px;
+}
+
+.book-preview .btn-remove {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+}
+
+.book-preview img {
+  margin-top: 15px;
+  max-width: 80%;
+  height: 200px;
+  max-height: max-content;
+}
+
+.book-preview h5 {
+  font-size: 0.9em;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 0%;
+}
+
+.book-preview h6 {
+  margin: 5px;
+}
+.book-preview h6 span {
+  color: tomato;
+  font-size: 1.5em;
+}
+
+.btn-action {
+  align-self: flex-end;
+  position: absolute;
+  border: none;
+  bottom: 2px;
+}
+
+.actions-form input[type='text'],
+input[type='number'] {
+  width: 30%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.actions-form button {
+  background-color: green;
+  color: white;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.actions-form .cancelbtn {
+  background-color: #ff2e00;
+}
+
+.modal-content {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.actions-form .close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  background-color: #fefefe;
+  color: rgb(10, 10, 10);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}

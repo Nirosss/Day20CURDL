@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book-Shop</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body onload="onInit()">
+    <h2>Welcome to our bookshop</h2>
+    <span class="switch-view">
+      <button title="Switch to table view" onclick="onSetView('table')">
+        <img src="/img/list-view.png" alt="" />
+      </button>
+      <button title="Switch to grid view" onclick="onSetView('cards')">
+        <img src="/img/grid-view.png" alt="" />
+      </button>
+    </span>
+    <section class="book-filter">
+      <h3 class="filter-title">Filter your books</h3>
+      <label>
+        Max Price:
+        <input
+          type="range"
+          min="12"
+          max="31"
+          value="31"
+          class="filter-max-price"
+          onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})"
+        />
+      </label>
+      <hr />
+      <label>
+        Minimum Rate:
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value="0"
+          class="filter-min-rate"
+          onchange="this.title=this.value;onSetFilterBy({minRate: this.value})"
+        />
+      </label>
+      <input
+        class="name-search"
+        type="text"
+        oninput="onSetFilterBy({txt: this.value})"
+        placeholder="Search by name..."
+      />
+    </section>
+    <section class="books-container"></section>
+    <button class="add-book" onclick="onAddBook()">Add new book</button>
+    <button class="next-page" onclick="onNextPage()">Next Page</button>
+    <section class="actions-form"></section>
+    <div class="modal">
+      <h3></h3>
+      <img class="modal-img" src="" alt="" />
+      <h4>Price <span></span></h4>
+      <h5>Book Description</h5>
+      <p></p>
+      <section class="book-rate">
+        <span class="rate-txt"> Rate this Book: </span>
+        <span class="minus" onclick="onBookRate('minus')">-</span>
+        <span class="num">01</span>
+        <span class="plus" onclick="onBookRate('plus')">+</span>
+      </section>
+      <button onclick="onCloseModal()">Close</button>
+    </div>
+    <script src="js/services/util_service.js"></script>
+    <script src="js/services/storage_service.js"></script>
+    <script src="js/services/books_service.js"></script>
+    <script src="js/books_controler.js"></script>
+  </body>
+</html>
