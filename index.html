@@ -8,74 +8,101 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body onload="onInit()">
-    <h2>Welcome to our bookshop</h2>
-    <span class="switch-view">
-      <button title="Switch to table view" onclick="onSetView('table')">
-        <img src="img/list-view.png" alt="" />
-      </button>
-      <button title="Switch to grid view" onclick="onSetView('cards')">
-        <img src="img/grid-view.png" alt="" />
-      </button>
-    </span>
-    <section class="book-filter">
-      <h3 class="filter-title">Filter your books</h3>
-      <label>
-        Max Price:
-        <input
-          type="range"
-          min="12"
-          max="31"
-          value="31"
-          class="filter-max-price"
-          onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})"
-        />
-      </label>
-      <hr />
-      <label>
-        Minimum Rate:
-        <input
-          type="range"
-          min="0"
-          max="10"
-          value="0"
-          class="filter-min-rate"
-          onchange="this.title=this.value;onSetFilterBy({minRate: this.value})"
-        />
-      </label>
-      <input
-        class="name-search"
-        type="text"
-        oninput="onSetFilterBy({txt: this.value})"
-        placeholder="Search by name..."
-      />
-      <button class="filter-sortby" onclick="onSetSortBy('name')">
-        Sort by Name
-      </button>
-      <button class="filter-sortby" onclick="onSetSortBy('price')">
-        Sort by Price
-      </button>
+    <h2 data-trans="title">Welcome to our bookshop</h2>
+    <section class="lang-and-view">
+      <span class="lang-selector">
+        <lable data-trans="lagn-selctor">Select language:</lable>
+        <select onchange="onSetLang(this.value)">
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+        </select>
+      </span>
+      <span class="switch-view">
+        <button title="Switch to table view" onclick="onSetView('table')">
+          <img src="img/list-view.png" alt="" />
+        </button>
+        <button title="Switch to grid view" onclick="onSetView('cards')">
+          <img src="img/grid-view.png" alt="" />
+        </button>
+      </span>
     </section>
+    <main class="main-functions">
+      <h5 data-trans="filter-title" class="filter-title">Filter your books</h5>
+
+      <section class="book-filter">
+        <label data-trans="filter-price-title" class="filter-range">
+          Max Price:</label
+        >
+        <label>
+          <!-- להוריד את העטיפה ולעדכן CSS-->
+          <input
+            type="range"
+            min="12"
+            max="31"
+            value="31"
+            class="filter-max-price"
+            onchange="this.title=this.value;onSetFilterBy({maxPrice: this.value})"
+          />
+        </label>
+        <label data-trans="filter-rate-title" class="filter-range">
+          Minimum Rate:</label
+        >
+        <label>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="0"
+            class="filter-min-rate"
+            onchange="this.title=this.value;onSetFilterBy({minRate: this.value})"
+          />
+        </label>
+        <input
+          class="name-search"
+          type="text"
+          oninput="onSetFilterBy({txt: this.value})"
+          placeholder="Search by name..."
+          data-trans="search-placeholder"
+        />
+        <button
+          class="filter-sortby"
+          onclick="onSetSortBy('name')"
+          data-trans="sort-by-name"
+        ></button>
+        <button
+          class="filter-sortby"
+          onclick="onSetSortBy('price')"
+          data-trans="sort-by-price"
+        ></button>
+      </section>
+    </main>
+
     <section class="books-container"></section>
-    <button class="add-book" onclick="onAddBook()">Add new book</button>
-    <button class="next-page" onclick="onNextPage()">Next Page</button>
+    <button class="add-book" onclick="onAddBook()" data-trans="add-book">
+      Add new book
+    </button>
+    <button class="next-page" onclick="onNextPage()" data-trans="next-page">
+      Next page
+    </button>
     <section class="actions-form"></section>
     <div class="modal">
       <h3></h3>
       <img class="modal-img" src="" alt="" />
-      <h4>Price <span></span></h4>
-      <h5>Book Description</h5>
+      <h4><span data-trans="price">Price</span><span></span></h4>
+      <h5 data-trans="modal-desc">Book Description</h5>
       <p></p>
       <section class="book-rate">
-        <span class="rate-txt"> Rate this Book: </span>
+        <span class="rate-txt" data-trans="modal-rate"> </span>
         <span class="minus" onclick="onBookRate('minus')">-</span>
         <span class="num">01</span>
         <span class="plus" onclick="onBookRate('plus')">+</span>
       </section>
-      <button onclick="onCloseModal()">Close</button>
+      <button onclick="onCloseModal()" data-trans="modal-close"></button>
     </div>
     <script src="js/services/util_service.js"></script>
     <script src="js/services/storage_service.js"></script>
     <script src="js/services/books_service.js"></script>
     <script src="js/books_controler.js"></script>
+    <script src="js/services/i18nservice.js"></script>
   </body>
 </html>

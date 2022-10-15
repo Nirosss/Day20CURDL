@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'booksDB'
 const VIEW_KEY = 'USERPREF'
-const PAGE_SIZE = 4
+var PAGE_SIZE = 8
 const bookNames = [
   'The Gruffalo',
   'Finn Family Moomintroll',
